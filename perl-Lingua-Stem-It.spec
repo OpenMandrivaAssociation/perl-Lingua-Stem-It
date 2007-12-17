@@ -13,7 +13,6 @@ Source0:	http://search.cpan.org/CPAN/authors/id/A/AC/ACALPINI/%{module}-%{versio
 URL:		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module applies the Porter Stemming Algorithm to its parameters, returning
