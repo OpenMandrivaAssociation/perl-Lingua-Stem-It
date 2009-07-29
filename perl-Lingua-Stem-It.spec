@@ -1,19 +1,18 @@
-%define module	Lingua-Stem-It
-%define name	perl-%{module}
-%define version 0.02
-%define release %mkrel 4
+%define upstream_name	 Lingua-Stem-It
+%define upstream_version 0.02
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Porter's stemming algorithm for Italian
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/A/AC/ACALPINI/%{module}-%{version}.tar.bz2
-URL:		http://search.cpan.org/dist/%{module}
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/A/AC/ACALPINI/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module applies the Porter Stemming Algorithm to its parameters, returning
@@ -27,7 +26,7 @@ module by Benjamin Franz, from which some functionalities have been borrowed
 (caching and exception list).
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -48,4 +47,3 @@ rm -rf %{buildroot}
 %doc README
 %{perl_vendorlib}/Lingua
 %{_mandir}/man3*/*
-
