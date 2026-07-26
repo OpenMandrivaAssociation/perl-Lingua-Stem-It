@@ -1,15 +1,13 @@
 %define upstream_name	 Lingua-Stem-It
-%define upstream_version 0.02
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.02
+Release:	6
 
 Summary:	Porter's stemming algorithm for Italian
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Lingua-Stem-It
-Source0:	https://cpan.metacpan.org/authors/id/A/AC/ACALPINI/Lingua-Stem-It-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AC/ACALPINI/Lingua-Stem-It-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ module by Benjamin Franz, from which some functionalities have been borrowed
 (caching and exception list).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -48,9 +46,7 @@ make test
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 403390
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.02-4mdv2009.0
+- rebuild using %0.02 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.02-4mdv2009.0
 + Revision: 257597
 - rebuild
 
